@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/rtc-io/rtc-ui/issues"
   },
-  "homepage": "https://github.com/rtc-io/rtc-ui"
+  "homepage": "https://github.com/rtc-io/rtc-ui",
+  "dependencies": {
+    "fdom": "~0.8"
+  }
 }
