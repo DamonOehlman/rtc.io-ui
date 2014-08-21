@@ -24,6 +24,15 @@
   },
   "homepage": "https://github.com/rtc-io/rtc-ui",
   "dependencies": {
-    "fdom": "~0.8"
+    "brfs": "^1.2.0",
+    "crel": "^1.1.2",
+    "fdom": "~0.8",
+    "insert-css": "^0.2.0"
+  },
+
+  "browserify": {
+    "transform": [
+      "brfs"
+    ]
   }
 }

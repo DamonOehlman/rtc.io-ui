@@ -1,0 +1,24 @@
+video.rtc-localvideo {
+  max-width: 20vw;
+  margin: 10px;
+}
+
+video[class*="align-"] {
+  position: absolute;
+}
+
+video[class*="align-bottom"] {
+  bottom: 0;
+}
+
+video[class*="align-top"] {
+  top: 0;
+}
+
+video[class*="align-"][class$="left"] {
+  left: 0;
+}
+
+video[class*="align-"][class$="right"] {
+  right: 0;
+}
