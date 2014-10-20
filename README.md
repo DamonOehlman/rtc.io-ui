@@ -18,7 +18,38 @@ in conjunction with other rtc.io modules.
 Provides a number of helper functions for rendering both local and remote
 streams to the DOM.  Also provides a top level `streamui` function that chain
 be used as a quickconnect "plugin" to automatically wire up these helper
-functions for typical usage:
+functions for typical usage.
+
+An example of usage is provided below:
+
+```js
+var quickconnect = require('rtc-quickconnect');
+var capture = require('rtc-capture');
+var streamui = require('rtc-ui/stream');
+var conference;
+
+capture({ video: true, audio: true }, function(err, stream) {
+  if (err) {
+    return console.error(err);
+  }
+
+  // create the conference
+  conference = quickconnect('https://switchboard.rtc.io/', {
+    room: 'rtc-ui:conference-example'
+  });
+
+  // add the local stream to the conference
+  conference.addStream(stream);
+
+  // render the local stream using the stream ui
+  streamui.local(document.body)(stream);
+
+  // use streamui to automatically handle element creation and removal
+  streamui(conference, { container: document.body });
+});
+
+
+```
 
 #### `streamui(qc, opts)`
 

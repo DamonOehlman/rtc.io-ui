@@ -11,7 +11,11 @@ var tweak = require('fdom/classtweak');
   Provides a number of helper functions for rendering both local and remote
   streams to the DOM.  Also provides a top level `streamui` function that chain
   be used as a quickconnect "plugin" to automatically wire up these helper
-  functions for typical usage:
+  functions for typical usage.
+
+  An example of usage is provided below:
+
+  <<< examples/conference.js
 
   #### `streamui(qc, opts)`
 
