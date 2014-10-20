@@ -25,10 +25,8 @@
   },
   "homepage": "https://github.com/rtc-io/rtc-ui",
   "dependencies": {
-    "brfs": "^1.2.0",
     "crel": "^1.1.2",
     "fdom": "^1.1.0",
-    "insert-css": "^0.2.0",
     "kgo": "^1.2.0",
     "rtc-attach": "^1.3.0",
     "whisk": "^1.0.0"
