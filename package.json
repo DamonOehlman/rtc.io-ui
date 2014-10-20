@@ -1,6 +1,6 @@
 {
   "name": "rtc-ui",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Common UI interaction patterns for working with rtc.io modules",
   "main": "index.js",
   "stability": "experimental",
