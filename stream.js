@@ -5,6 +5,7 @@ var attrib = require('fdom/attrib');
 var append = require('fdom/append');
 var tweak = require('fdom/classtweak');
 var qsa = require('fdom/qsa');
+var canplay = require('canplay');
 
 /**
   ### `rtc-ui/stream`
@@ -57,7 +58,8 @@ streamui.local = function(container, opts) {
     // use kgo to help with flow control
     kgo({ stream: stream, options: opts })
     ('attach', [ 'stream', 'options' ], attach.local)
-    ('render-local', [ 'attach' ], chain([
+    ('canplay', ['attach'], canplay)
+    ('render-local', [ 'canplay' ], chain([
       tweak('+rtc'),
       tweak('+localvideo'),
       append.to(container)
@@ -83,7 +85,8 @@ streamui.add = function(container, opts) {
   return function(id, stream) {
     kgo({ stream: stream, options: opts })
     ('attach', [ 'stream', 'options' ], attach)
-    ('render-remote', [ 'attach' ], chain([
+    ('canplay', ['attach'], canplay)
+    ('render-remote', [ 'canplay' ], chain([
       tweak('+rtc'),
       tweak('+remotevideo'),
       attrib('data-peer', id),
