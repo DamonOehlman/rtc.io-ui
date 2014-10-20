@@ -1,7 +1,7 @@
 {
   "badges": {
     "nodeico": true,
-    "stability": "experimental",
+    "stability": true,
     "gitter": "rtc-io/discuss"
   },
 

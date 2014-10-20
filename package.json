@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "Common UI interaction patterns for working with rtc.io modules",
   "main": "index.js",
+  "stability": "experimental",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "gendocs": "gendocs > README.md"
