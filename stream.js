@@ -4,6 +4,7 @@ var chain = require('whisk/chain');
 var attrib = require('fdom/attrib');
 var append = require('fdom/append');
 var tweak = require('fdom/classtweak');
+var qsa = require('fdom/qsa');
 
 /**
   ### `rtc-ui/stream`
@@ -105,14 +106,14 @@ streamui.add = function(container, opts) {
 **/
 streamui.remove = function(container, opts) {
   return function(id, stream) {
-    var selector = 'data-peer="' + id + '"';
+    var selector = '[data-peer="' + id + '"]';
 
     // build the selector
     if (stream) {
-      selector += ' data-stream="' + stream.label + '"';
+      selector += '[data-stream="' + stream.label + '"]';
     }
 
-    qsa(video + '[' + selector + ']', container).forEach(function(el) {
+    qsa('*' + selector, container).forEach(function(el) {
       el.parentNode.removeChild(el);
     });
   };
