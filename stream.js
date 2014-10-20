@@ -1,6 +1,7 @@
 var attach = require('rtc-attach');
 var kgo = require('kgo');
 var chain = require('whisk/chain');
+var attrib = require('fdom/attrib');
 var append = require('fdom/append');
 var tweak = require('fdom/classtweak');
 
@@ -29,6 +30,16 @@ streamui.local = function(container, opts) {
 
 streamui.add = function(container, opts) {
   return function(id, stream) {
+    kgo({ stream: stream, options: opts })
+    ('attach', [ 'stream', 'options' ], attach)
+    ('render-remote', [ 'attach' ], chain([
+      tweak('+rtc'),
+      tweak('+remotevideo'),
+      attrib('data-peer', id),
+      attrib('data-stream', stream.label),
+      append.to(container)
+    ]))
+    .on('error', console.error.bind(console));
   };
 };
 
