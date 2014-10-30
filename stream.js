@@ -108,6 +108,11 @@ streamui.add = function(container, opts) {
 
 **/
 streamui.remove = function(container, opts) {
+  // if we have been given a string for container, find that target
+  if (typeof container == 'string' || (container instanceof String)) {
+    container = document.querySelector(container);
+  }
+
   return function(id, stream) {
     var selector = '[data-peer="' + id + '"]';
 
