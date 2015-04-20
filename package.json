@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/rtc-io/rtc-ui.git"
+    "url": "https://github.com/DamonOehlman/rtc.io-ui.git"
   },
   "keywords": [
     "webrtc",
@@ -18,12 +18,12 @@
     "html",
     "layout"
   ],
-  "author": "Damon Oehlman <damon.oehlman@nicta.com.au>",
-  "license": "Apache 2.0",
+  "author": "Damon Oehlman <damon.oehlman@gmail.com>",
+  "license": "ISC",
   "bugs": {
-    "url": "https://github.com/rtc-io/rtc-ui/issues"
+    "url": "https://github.com/DamonOehlman/rtc.io-ui/issues"
   },
-  "homepage": "https://github.com/rtc-io/rtc-ui",
+  "homepage": "https://github.com/DamonOehlman/rtc.io-ui",
   "dependencies": {
     "canplay": "^1.0.0",
     "crel": "^2.1.5",
